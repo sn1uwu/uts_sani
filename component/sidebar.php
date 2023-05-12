@@ -28,7 +28,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="Anggota.php">
+        <a class="nav-link" href="anggota.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Anggota</span></a>
     </li>
