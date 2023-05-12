@@ -9,6 +9,7 @@
         <th>Jumlah Buku</th>
         <th>Lokasi</th>
         <th>Tanggal Input</th>
+        <th>Aksi</th>
     </tr>
     <?php $query = "SELECT * FROM tb_buku";
     $i = 1;
@@ -24,6 +25,13 @@
             <td><?= $data['jumlah_buku']; ?></td>
             <td><?= $data['lokasi']; ?></td>
             <td><?= $data['tgl_input']; ?></td>
+            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $data['id_buku'];?>">
+            Edit
+            </button>
+            <input type="hidden" name="">
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?= $data['id_buku'];?>">
+            Delete
+            </button></td>
         </tr>
     <?php endforeach; ?>
 </table>
