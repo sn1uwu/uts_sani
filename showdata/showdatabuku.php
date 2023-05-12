@@ -9,6 +9,7 @@
         <th>Jumlah Buku</th>
         <th>Lokasi</th>
         <th>Tanggal Input</th>
+        <th>Data Aksi</th>
     </tr>
     <?php $query = "SELECT * FROM tb_buku";
     $i = 1;
