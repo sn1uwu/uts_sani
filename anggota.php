@@ -258,6 +258,7 @@ if (isset($_POST['tambahanggota'])) {
 
                 <!-- Modal body -->
                 <div class="modal-body">
+                    <!-- Form -->
                     <form action="" method="post">
                         NIM
                         <input type="text" name="nim" placeholder="NIM" class="form-control" required>
