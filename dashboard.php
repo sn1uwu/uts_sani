@@ -79,31 +79,35 @@
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-lg-6 mb-4">
-                            <a class="card bg-primary text-white shadow" href="data_kelas.php">
+                            <a class="card bg-primary text-white shadow" href="anggota.php">
                                 <div class="card-body">
-                                    Data Kelas
+                                    Data Anggota
                                     <div class="text-white-50 small"></div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-lg-6 mb-4">
-                            <a href="siswa.php" class="card bg-success text-white shadow">
+                            <a href="buku.php" class="card bg-success text-white shadow">
                                 <div class="card-body">
-                                    Data Siswa
+                                    Data Buku
                                     <div class="text-white-50 small"></div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-lg-6 mb-4">
-                            <a href="petugas.php" class="card bg-warning text-white shadow">
+                            <a href="peminjaman.php" class="card bg-warning text-white shadow">
                                 <div class="card-body">
-                                    Data Admin
+                                    Data Peminjaman
                                     <div class="text-white-50 small"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
-
+                    <div class="col-lg-6 mb-4">
+                            <a href="peminjaman.php" class="card bg-warning text-white shadow">
+                                <div class="card-body">
+                                    Data Peminjaman
+                                    <div class="text-white-50 small"></div>
                 </div>
 
             </div>
