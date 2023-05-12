@@ -59,6 +59,40 @@ function createBuku($data)
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
+function updateBuku($data)
+{
+    global $koneksi;
+    $id_buku = htmlspecialchars($data["id_buku"]);
+    $judul_buku = htmlspecialchars($data["judul_buku"]);
+    $pengarang_buku = htmlspecialchars($data["pengarang_buku"]);
+    $penerbit_buku = htmlspecialchars($data["penerbit_buku"]);
+    $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
+    $isbn = htmlspecialchars($data["isbn"]);
+    $jumlah_buku = htmlspecialchars($data["jumlah_buku"]);
+    $lokasi = htmlspecialchars($data["lokasi"]);
+    $tgl_input = htmlspecialchars($data["tgl_input"]);
+
+    $query = "UPDATE tb_buku SET judul_buku = $judul_buku, pengarang_buku = $pengarang_buku, penerbit_buku = $penerbit_buku, tahun_terbit = $tahun_terbit, isbn = $isbn, jumlah_buku = $jumlah_buku, lokasi = $lokasi, tgl_input = $tgl_input WHERE id_buku = $id_buku";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+
+function deleteBuku($data)
+{
+    global $koneksi;
+    $id_buku = htmlspecialchars($data["id_buku"]);
+    $query = "DELETE FROM tb_buku WHERE id_buku = $id_buku";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+
+function readBuku($data)
+{
+    global $koneksi;
+    $query = "SELECT * FROM tb_buku";
+    $result = mysqli_query($koneksi, $query);
+    return $result;
+}
 
 
 // ANGGOTA
@@ -78,7 +112,32 @@ function createAnggota($data)
     return mysqli_affected_rows($koneksi);
 }
 
-// PEMINJAMAN
+function updateAnggota($data)
+{
+    global $koneksi;
+    $id_anggota = htmlspecialchars($data["id_anggota"]);
+    $nim = htmlspecialchars($data["nim"]);
+    $nama_anggota = htmlspecialchars($data["nama_anggota"]);
+    $tempat_lahir = htmlspecialchars($data["tempat_lahir"]);
+    $tgl_lahir = htmlspecialchars($data["tgl_lahir"]);
+    $jk = htmlspecialchars($data["jk"]);
+    $prodi = htmlspecialchars($data["prodi"]);
+
+    $query = "UPDATE anggota SET nim = '$nim', nama_anggota = '$nama_anggota', tempat_lahir = '$tempat_lahir', tgl_lahir = '$tgl_lahir', jk = '$jk', prodi = '$prodi' WHERE id_anggota = '$id_anggota'";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+
+function deleteAnggota($data)
+{
+    global $koneksi;
+    $id_anggota = htmlspecialchars($data["id_anggota"]);
+    $query = "DELETE FROM anggota WHERE id_anggota = '$id_anggota'";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+
+// PEMINJAMAN .
 function createPeminjaman($data)
 {
     global $koneksi;
@@ -105,7 +164,17 @@ function updatePeminjaman($data)
     $tgl_kembali = htmlspecialchars($data["tgl_kembali"]);
     $status = htmlspecialchars($data["status"]);
 
-    $query = "UPDATE peminjaman SET id_buku='$id_buku', nim_transaksi='$nim_transaksi', id_anggota='$id_anggota', tgl_pinjem='$tgl_pinjem', tgl_kembali='$tgl_kembali', status='$status' WHERE id_transaksi='$id_transaksi'";
+    $query = "UPDATE peminjaman SET id_buku = '$id_buku', nim_transaksi = '$nim_transaksi', id_anggota = '$id_anggota', tgl_pinjem = '$tgl_pinjem', tgl_kembali = '$tgl_kembali', status = '$status' WHERE id_transaksi = '$id_transaksi'";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+
+function deletePeminjaman($data)
+{
+    global $koneksi;
+    $id_transaksi = htmlspecialchars($data["id_transaksi"]);
+    $query = "DELETE FROM peminjaman WHERE id_transaksi = '$id_transaksi'";
+
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
