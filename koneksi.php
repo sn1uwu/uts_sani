@@ -15,10 +15,30 @@ function registerAdmin($data)
     $username = htmlspecialchars($data["username"]);
     $password = htmlspecialchars($data["password"]);
 
-    $query = "INSERT INTO admin VALUES ('','$username','$password')";
+    $query = "INSERT INTO admin VALUES (NULL,'$username','$password')";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
+
+function updateAdmin($data)
+{
+    global $koneksi;
+    $id = $data["id"];
+    $username = htmlspecialchars($data["username"]);
+    $password = htmlspecialchars($data["password"]);
+
+    $query = "UPDATE admin SET username='$username', password='$password' WHERE id='$id'";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+
+function deleteAdmin($id)
+{
+    global $koneksi;
+    mysqli_query($koneksi, "DELETE FROM admin WHERE id=$id");
+    return mysqli_affected_rows($koneksi);
+}
+
 
 
 // BUKU
@@ -132,10 +152,11 @@ function createPeminjaman($data)
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
+
 function updatePeminjaman($data)
 {
     global $koneksi;
-    $id_transaksi = htmlspecialchars($data["id_transaksi"]);
+    $id_transaksi = $data["id_transaksi"];
     $id_buku = htmlspecialchars($data["id_buku"]);
     $nim_transaksi = htmlspecialchars($data["nim_transaksi"]);
     $id_anggota = htmlspecialchars($data["id_anggota"]);
@@ -153,6 +174,7 @@ function deletePeminjaman($data)
     global $koneksi;
     $id_transaksi = htmlspecialchars($data["id_transaksi"]);
     $query = "DELETE FROM peminjaman WHERE id_transaksi = '$id_transaksi'";
+
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
