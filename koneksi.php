@@ -137,6 +137,14 @@ function deleteAnggota($data)
     return mysqli_affected_rows($koneksi);
 }
 
+function readAnggota($data)
+{
+    global $koneksi;
+    $query = $data;
+    $result = mysqli_query($koneksi, $query);
+    return $result;
+}
+
 // PEMINJAMAN .
 function createPeminjaman($data)
 {

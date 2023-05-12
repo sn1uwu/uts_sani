@@ -167,20 +167,18 @@ include 'koneksi.php';
                         <th>Gender</th>
                         <th>Prodi</th>
                     </tr>
-                    <?php $query = "SELECT * FROM tb_buku";
+                    <?php $query = "SELECT * FROM tb_anggota";
                     $i = 1;
-                    $datas = readBuku($query) ?>
+                    $datas = readAnggota($query) ?>
                     <?php foreach ($datas as $data) : ?>
                         <tr>
                             <td><?= $i++; ?></td>
-                            <td><?= $data['judul_buku']; ?></td>
-                            <td><?= $data['pengarang_buku']; ?></td>
-                            <td><?= $data['penerbit_buku']; ?></td>
-                            <td><?= $data['tahun_terbit']; ?></td>
-                            <td><?= $data['isbn']; ?></td>
-                            <td><?= $data['jumlah_buku']; ?></td>
-                            <td><?= $data['lokasi']; ?></td>
-                            <td><?= $data['tgl_input']; ?></td>
+                            <td><?= $data['nim']; ?></td>
+                            <td><?= $data['nama_anggota']; ?></td>
+                            <td><?= $data['tempat_lahir']; ?></td>
+                            <td><?= $data['tgl_lahir']; ?></td>
+                            <td><?= $data['jk']; ?></td>
+                            <td><?= $data['prodi']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </table>
@@ -189,9 +187,8 @@ include 'koneksi.php';
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modaltambah">
-                    
-                    Tambah Kelas
+                    <button type="submit" name="submit" class="btn btn-primary" data-toggle="modal" data-target="#Modaltambah">
+                        Tambah Anggota
                     </button>
 
 
@@ -245,13 +242,28 @@ include 'koneksi.php';
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form method="post">
+                    <form action="" method="post">
+                        Nama Anggota
+                        <input type="text" name="nama_anggota" placeholder="Nama Anggota" class="form-control" required>
+                        <br>
                         Nama Kelas
                         <input type="text" name="nama_kelas" placeholder="Nama Kelas" class="form-control" required>
                         <br>
-                        Kompetensi Keahlian
-                        <input type="text" name="kompetensi_keahlian" placeholder="Kompetensi Keahlian" class="form-control" required>
+                        Tempat Lahir
+                        <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control" required>
                         <br>
+                        Tanggal Lahir
+                        <input type="text" name="tgl_lahir" placeholder="Tanggal Lahir" class="form-control" required>
+                        <br>
+                        Gender
+                        <input type="text" name="jk" placeholder="Gender" class="form-control" required>
+                        <br>
+                        Prodi
+                        <input type="text" name="prodi" placeholder="prodi" class="form-control" required>
+                        <br>
+                        <!-- Kompetensi Keahlian
+                        <input type="text" name="kompetensi_keahlian" placeholder="Kompetensi Keahlian" class="form-control" required>
+                        <br> -->
                         <button type="submit" class="btn btn-primary" name="tambahkelas">Submit</button>
                     </form>
                 </div>
