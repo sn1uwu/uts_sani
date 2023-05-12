@@ -89,7 +89,7 @@ function deleteBuku($data)
 function readBuku($data)
 {
     global $koneksi;
-    $query = "SELECT * FROM tb_buku";
+    $query = $data;
     $result = mysqli_query($koneksi, $query);
     return $result;
 }
