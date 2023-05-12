@@ -54,7 +54,7 @@ function createBuku($data)
     $lokasi = htmlspecialchars($data["lokasi"]);
     $tgl_input = htmlspecialchars($data["tgl_input"]);
 
-    $query = "INSERT INTO buku VALUES ('','$judul_buku','$pengarang_buku','$penerbit_buku','$tahun_terbit','$isbn','$jumlah_buku','$lokasi','$tgl_input')";
+    $query = "INSERT INTO tb_buku VALUES (NULL,'$judul_buku','$pengarang_buku','$penerbit_buku','$tahun_terbit','$isbn','$jumlah_buku','$lokasi','$tgl_input')";
 
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
@@ -106,7 +106,7 @@ function createAnggota($data)
     $jk = htmlspecialchars($data["jk"]);
     $prodi = htmlspecialchars($data["prodi"]);
 
-    $query = "INSERT INTO anggota VALUES ('','$nim','$nama_anggota','$tempat_lahir','$tgl_lahir','$jk','$prodi')";
+    $query = "INSERT INTO tb_anggota VALUES (NULL,'$nim','$nama_anggota','$tempat_lahir','$tgl_lahir','$jk','$prodi')";
 
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);

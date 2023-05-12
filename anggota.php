@@ -1,5 +1,21 @@
 <?php
 include 'koneksi.php';
+if (isset($_POST['tambahanggota'])) {
+    if (createAnggota($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data Anggota berhasil ditambahkan!');
+                document.location.href = 'anggota.php';
+            </script>
+        ";
+    } else {
+        echo "
+        <script>
+            alert('Data Anggota Gagal ditambahkan!');
+            document.location.href = 'anggota.php';
+        </script>";
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -242,18 +258,19 @@ include 'koneksi.php';
 
                 <!-- Modal body -->
                 <div class="modal-body">
+                    <!-- Form -->
                     <form action="" method="post">
+                        NIM
+                        <input type="text" name="nim" placeholder="NIM" class="form-control" required>
+                        <br>
                         Nama Anggota
                         <input type="text" name="nama_anggota" placeholder="Nama Anggota" class="form-control" required>
-                        <br>
-                        Nama Kelas
-                        <input type="text" name="nama_kelas" placeholder="Nama Kelas" class="form-control" required>
                         <br>
                         Tempat Lahir
                         <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control" required>
                         <br>
                         Tanggal Lahir
-                        <input type="text" name="tgl_lahir" placeholder="Tanggal Lahir" class="form-control" required>
+                        <input type="date" name="tgl_lahir" placeholder="Tanggal Lahir" class="form-control" required>
                         <br>
                         Gender
                         <input type="text" name="jk" placeholder="Gender" class="form-control" required>
@@ -264,7 +281,7 @@ include 'koneksi.php';
                         <!-- Kompetensi Keahlian
                         <input type="text" name="kompetensi_keahlian" placeholder="Kompetensi Keahlian" class="form-control" required>
                         <br> -->
-                        <button type="submit" class="btn btn-primary" name="tambahkelas">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="tambahanggota">Submit</button>
                     </form>
                 </div>
 
