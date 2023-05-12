@@ -191,64 +191,14 @@ include 'koneksi.php';
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modaltambah">
+                    
+                    Tambah Kelas
+                    </button>
 
 
 
 
-                    <!-- Modal Edit -->
-                    <div class="modal fade" id="edit<?= $id_kelas; ?>">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Edit Kelas</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <form method="post">
-                                        Nama Kelas
-                                        <input type="text" name="nama_kelas" value="<?= $nama_kelas; ?>" placeholder="Nama Kelas" class="form-control">
-                                        <br>
-                                        Kompetensi Keahlian
-                                        <input type="text" name="kompetensi_keahlian" value="<?= $kompetensi_keahlian; ?>" placeholder="Kompetensi Keahlian" class="form-control">
-                                        <input type="hidden" name="id_kelas" value="<?= $id_kelas; ?>">
-                                        <br>
-                                        <button type="submit" class="btn btn-warning" name="editkelas">Edit</button>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal Delete -->
-                    <div class="modal fade" id="delete<?= $id_kelas; ?>">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Hapus Kelas</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <form method="post">
-                                        Apakah Anda Yakin Ingin Menghapus <?= $nama_kelas; ?> ????
-                                        <input type="hidden" name="id_kelas" value="<?= $id_kelas; ?>">
-                                        <br>
-                                        <br>
-                                        <button type="submit" class="btn btn-danger" name="hapuskelas">Hapus</button>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
 
 
                     </tbody>
