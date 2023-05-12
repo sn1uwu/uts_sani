@@ -18,9 +18,6 @@
                     Nama Anggota
                     <input type="text" name="nama_anggota" placeholder="Nama Anggota" class="form-control" required>
                     <br>
-                    Tempat Lahir
-                    <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control" required>
-                    <br>
                     Tanggal Lahir
                     <input type="date" name="tgl_lahir" placeholder="Tanggal Lahir" class="form-control" required>
                     <br>

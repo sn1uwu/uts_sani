@@ -3,11 +3,7 @@
         <th>No :</th>
         <th>Judul Buku :</th>
         <th>Pengarang</th>
-        <th>Penerbit</th>
         <th>Tahun Terbit</th>
-        <th>ISBN</th>
-        <th>Jumlah Buku</th>
-        <th>Lokasi</th>
         <th>Tanggal Input</th>
         <th>Aksi</th>
     </tr>
@@ -19,11 +15,7 @@
             <td><?= $i++; ?></td>
             <td><?= $data['judul_buku']; ?></td>
             <td><?= $data['pengarang_buku']; ?></td>
-            <td><?= $data['penerbit_buku']; ?></td>
             <td><?= $data['tahun_terbit']; ?></td>
-            <td><?= $data['isbn']; ?></td>
-            <td><?= $data['jumlah_buku']; ?></td>
-            <td><?= $data['lokasi']; ?></td>
             <td><?= $data['tgl_input']; ?></td>
             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $data['id_buku']; ?>">
                     Edit
@@ -54,28 +46,9 @@
                             <br>
                             <input type="text" name="pengarang_buku" value="<?= $data['pengarang_buku']; ?>">
                             <br>
-                            <label for="penerbit_buku">Penerbit Buku : </label>
-                            <br>
-                            <input type="text" name="penerbit_buku" value="<?= $data['penerbit_buku']; ?>">
-                            <br>
                             <label for="tahun_terbit">Tahun Terbit : </label>
                             <br>
                             <input type="text" name="tahun_terbit" value="<?= $data['tahun_terbit']; ?>">
-                            <br>
-                            <label for="isbn">ISBN : </label>
-                            <br>
-                            <input type="text" name="isbn" value="<?= $data['isbn']; ?>">
-                            <br>
-                            <label for="jumlah_buku">Jumlah Buku : </label>
-                            <br>
-                            <input type="text" name="jumlah_buku" value="<?= $data['jumlah_buku']; ?>">
-                            <br>
-                            <label for="lokasi">Lokasi : </label>
-                            <select class="form-control mb-3" type="text" name="lokasi" required>
-                                <option value="Rak 1" selected>Rak 1</option>
-                                <option value="Rak 2">Rak 2</option>
-                                <option value="Rak 3">Rak 3</option>
-                            </select>
                             <br>
                             <label for="tgl_input">Tanggal Input : </label>
                             <input type="date" name="tgl_input" value="<?= $data['tgl_input']; ?>">

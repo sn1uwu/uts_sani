@@ -32,7 +32,7 @@ if (isset($_POST["submit"])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
-  <title>REGISTER SAN</title>
+  <title>REGISTER</title>
 </head>
 
 <body>
@@ -73,11 +73,11 @@ if (isset($_POST["submit"])) {
                     </div>
 
                   </form>
-
+                  <p align="center">Have an account? <a href="index.php" class="text-warning" style="font-weight:600; text-decoration:none;">Login</a></p>
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                  <img src="signupv2.png" class="img-fluid" alt="Sample image" height="200px" width="300px">
+                  <img src="signupv3.png" class="img-fluid" alt="Sample image" height="200px" width="300px">
 
                 </div>
               </div>

@@ -33,8 +33,15 @@
                     </div>
                     <div class="modal-body">
                         <form action="update/updateadmin.php" method="post">
-                            <input type="text" name="id" id="id" value="<?= $data['id']; ?>" hidden>
-                            <label for="nim">Username</label>
+                        NIM
+                    <?php $query = "SELECT * FROM tb_anggota";
+                    $i = 1;
+                    $datas = readAnggota($query) ?>
+                    <select name="anggota" id="nim" class="form-control">
+                    <?php foreach ($datas as $data) : ?>
+                        <option value="<?= $data['nim']; ?>"><?= $data['nim']; ?></option>
+                        <?php endforeach ;?>
+                        </select>       
                             <br>
                             <input type="text" name="username" value="<?= $data['username']; ?>">
                             <br>

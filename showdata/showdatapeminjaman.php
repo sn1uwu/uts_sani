@@ -39,42 +39,32 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="update/updatebuku.php" method="post">
-                            <input type="text" name="id_buku" id="id_buku" value="<?= $data['id_buku']; ?>" hidden>
-                            <label for="judul_buku">Judul Buku : </label>
+                        <form action="update/updatepeminjaman.php" method="post">
+                            <input type="text" name="nim" id="nim" value="<?= $data['id_anggota']; ?>" hidden>
+                            <label for="judul_buku">NIM : </label>
                             <br>
-                            <input type="text" name="judul_buku" value="<?= $data['judul_buku']; ?>">
+                            Judul Buku
+                    <?php $query = "SELECT * FROM tb_buku";
+                    $i = 1;
+                    $datas = readBuku($query) ?>
+                    <select name="buku" id="judul_buku" class="form-control">
+                    <?php foreach ($datas as $data) : ?>
+                        <option value="<?= $data['judul_buku']; ?>"><?= $data['judul_buku']; ?></option>
+                        <?php endforeach ;?>
+                        </select>            
                             <br>
-                            <label for="pengarang_buku">Pengarang Buku : </label>
+                            <label for="tgl_pinjam">Tanggal Pinjam</label>
                             <br>
-                            <input type="text" name="pengarang_buku" value="<?= $data['pengarang_buku']; ?>">
+                            <input type="date" name="tgl_pinjam" value="<?= $data['tgl_pinjam']; ?>">
                             <br>
-                            <label for="penerbit_buku">Penerbit Buku : </label>
+                            <label for="nim">Tanggal Kembali : </label>
                             <br>
-                            <input type="text" name="penerbit_buku" value="<?= $data['penerbit_buku']; ?>">
+                            <input type="text" name="tgl_kembali" value="<?= $data['tgl_kembali']; ?>">
                             <br>
-                            <label for="tahun_terbit">Tahun Terbit : </label>
+                            <label for="status">Status</label>
                             <br>
-                            <input type="text" name="tahun_terbit" value="<?= $data['tahun_terbit']; ?>">
+                            <input type="text" name="status" value="<?= $data['status']; ?>">
                             <br>
-                            <label for="isbn">ISBN : </label>
-                            <br>
-                            <input type="text" name="isbn" value="<?= $data['isbn']; ?>">
-                            <br>
-                            <label for="jumlah_buku">Jumlah Buku : </label>
-                            <br>
-                            <input type="text" name="jumlah_buku" value="<?= $data['jumlah_buku']; ?>">
-                            <br>
-                            <label for="lokasi">Lokasi : </label>
-                            <select class="form-control mb-3" type="text" name="lokasi" required>
-                                <option value="Rak 1" selected>Rak 1</option>
-                                <option value="Rak 2">Rak 2</option>
-                                <option value="Rak 3">Rak 3</option>
-                            </select>
-                            <br>
-                            <label for="tgl_input">Tanggal Input : </label>
-                            <input type="date" name="tgl_input" value="<?= $data['tgl_input']; ?>">
-
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" name="ubahdatabuku">Setuju</button>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>

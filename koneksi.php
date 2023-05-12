@@ -56,14 +56,11 @@ function createBuku($data)
     global $koneksi;
     $judul_buku = htmlspecialchars($data["judul_buku"]);
     $pengarang_buku = htmlspecialchars($data["pengarang_buku"]);
-    $penerbit_buku = htmlspecialchars($data["penerbit_buku"]);
     $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
-    $isbn = htmlspecialchars($data["isbn"]);
-    $jumlah_buku = htmlspecialchars($data["jumlah_buku"]);
     $lokasi = htmlspecialchars($data["lokasi"]);
     $tgl_input = htmlspecialchars($data["tgl_input"]);
 
-    $query = "INSERT INTO tb_buku VALUES (NULL,'$judul_buku','$pengarang_buku','$penerbit_buku','$tahun_terbit','$isbn','$jumlah_buku','$lokasi','$tgl_input')";
+    $query = "INSERT INTO tb_buku VALUES (NULL,'$judul_buku','$pengarang_buku','$tahun_terbit','$lokasi','$tgl_input')";
 
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
@@ -74,14 +71,10 @@ function updateBuku($data)
     $id_buku = htmlspecialchars($data["id_buku"]);
     $judul_buku = htmlspecialchars($data["judul_buku"]);
     $pengarang_buku = htmlspecialchars($data["pengarang_buku"]);
-    $penerbit_buku = htmlspecialchars($data["penerbit_buku"]);
     $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
-    $isbn = htmlspecialchars($data["isbn"]);
-    $jumlah_buku = htmlspecialchars($data["jumlah_buku"]);
-    $lokasi = htmlspecialchars($data["lokasi"]);
     $tgl_input = htmlspecialchars($data["tgl_input"]);
 
-    $query = "UPDATE tb_buku SET judul_buku = '$judul_buku', pengarang_buku = '$pengarang_buku', penerbit_buku = '$penerbit_buku', tahun_terbit = '$tahun_terbit', isbn = '$isbn', jumlah_buku = '$jumlah_buku', lokasi = '$lokasi', tgl_input = '$tgl_input' WHERE id_buku = '$id_buku'";
+    $query = "UPDATE tb_buku SET judul_buku = '$judul_buku', pengarang_buku = '$pengarang_buku',tahun_terbit = '$tahun_terbit', tgl_input = '$tgl_input' WHERE id_buku = '$id_buku'";
 
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
@@ -111,12 +104,11 @@ function createAnggota($data)
     global $koneksi;
     $nim = htmlspecialchars($data["nim"]);
     $nama_anggota = htmlspecialchars($data["nama_anggota"]);
-    $tempat_lahir = htmlspecialchars($data["tempat_lahir"]);
     $tgl_lahir = htmlspecialchars($data["tgl_lahir"]);
     $jk = htmlspecialchars($data["jk"]);
     $prodi = htmlspecialchars($data["prodi"]);
 
-    $query = "INSERT INTO tb_anggota VALUES (NULL,'$nim','$nama_anggota','$tempat_lahir','$tgl_lahir','$jk','$prodi')";
+    $query = "INSERT INTO tb_anggota VALUES (NULL,'$nim','$nama_anggota','$tgl_lahir','$jk','$prodi')";
 
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
@@ -128,12 +120,11 @@ function updateAnggota($data)
     $id_anggota = htmlspecialchars($data["id_anggota"]);
     $nim = htmlspecialchars($data["nim"]);
     $nama_anggota = htmlspecialchars($data["nama_anggota"]);
-    $tempat_lahir = htmlspecialchars($data["tempat_lahir"]);
     $tgl_lahir = htmlspecialchars($data["tgl_lahir"]);
     $jk = htmlspecialchars($data["jk"]);
     $prodi = htmlspecialchars($data["prodi"]);
 
-    $query = "UPDATE tb_anggota SET nim = '$nim', nama_anggota = '$nama_anggota', tempat_lahir = '$tempat_lahir', tgl_lahir = '$tgl_lahir', jk = '$jk', prodi = '$prodi' WHERE id_anggota = '$id_anggota'";
+    $query = "UPDATE tb_anggota SET nim = '$nim', nama_anggota = '$nama_anggota', tgl_lahir = '$tgl_lahir', jk = '$jk', prodi = '$prodi' WHERE id_anggota = '$id_anggota'";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
@@ -175,7 +166,7 @@ function createPeminjaman($data)
     $tgl_kembali = htmlspecialchars($data["tgl_kembali"]);
     $status = htmlspecialchars($data["status"]);
 
-    $query = "INSERT INTO tb_peminjaman VALUES ('','$id_buku','$nim_transaksi','$id_anggota','$tgl_pinjem','$tgl_kembali','$status')";
+    $query = "INSERT INTO tb_transaksi VALUES ('','$id_buku','$nim_transaksi','$id_anggota','$tgl_pinjem','$tgl_kembali','$status')";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
@@ -191,7 +182,7 @@ function updatePeminjaman($data)
     $tgl_kembali = htmlspecialchars($data["tgl_kembali"]);
     $status = htmlspecialchars($data["status"]);
 
-    $query = "UPDATE tb_peminjaman SET id_buku = '$id_buku', nim_transaksi = '$nim_transaksi', id_anggota = '$id_anggota', tgl_pinjem = '$tgl_pinjem', tgl_kembali = '$tgl_kembali', status = '$status' WHERE id_transaksi = '$id_transaksi'";
+    $query = "UPDATE tb_transaksi SET id_buku = '$id_buku', nim_transaksi = '$nim_transaksi', id_anggota = '$id_anggota', tgl_pinjem = '$tgl_pinjem', tgl_kembali = '$tgl_kembali', status = '$status' WHERE id_transaksi = '$id_transaksi'";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }

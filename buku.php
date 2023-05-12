@@ -98,7 +98,7 @@ if (isset($_POST["tambahbuku"])) {
                 <div class="container-fluid">
 
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modaltambah">
-                        Tambah Kelas
+                        Tambah Buku
                     </button>
 
                     </tbody>
@@ -113,15 +113,7 @@ if (isset($_POST["tambahbuku"])) {
     </div>
     <!-- End of Main Content -->
 
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2020</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+
 
     </div>
     <!-- End of Content Wrapper -->

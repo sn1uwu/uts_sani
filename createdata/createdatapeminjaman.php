@@ -12,7 +12,14 @@
             <div class="modal-body">
                 <form action="" method="post">
                     NIM
-                    <input type="text" name="nim" placeholder="NIM" class="form-control" required>
+                    <?php $query = "SELECT * FROM tb_anggota";
+                    $i = 1;
+                    $datas = readAnggota($query) ?>
+                    <select name="anggota" id="nim" class="form-control">
+                    <?php foreach ($datas as $data) : ?>
+                        <option value="<?= $data['nim']; ?>"><?= $data['nim']; ?></option>
+                        <?php endforeach ;?>
+                        </select>             
                     <br>
                     Judul Buku
                     <?php $query = "SELECT * FROM tb_buku";

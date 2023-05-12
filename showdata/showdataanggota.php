@@ -3,7 +3,6 @@
         <th>No :</th>
         <th>NIM :</th>
         <th>Nama Anggota</th>
-        <th>Tempat Lahir</th>
         <th>Tanggal Lahir</th>
         <th>Gender</th>
         <th>Prodi</th>
@@ -17,7 +16,6 @@
             <td><?= $i++; ?></td>
             <td><?= $data['nim']; ?></td>
             <td><?= $data['nama_anggota']; ?></td>
-            <td><?= $data['tempat_lahir']; ?></td>
             <td><?= $data['tgl_lahir']; ?></td>
             <td><?= $data['jk']; ?></td>
             <td><?= $data['prodi']; ?></td>
@@ -49,10 +47,6 @@
                             <label for="nim">Nama Anggota : </label>
                             <br>
                             <input type="text" name="nama_anggota" value="<?= $data['nama_anggota']; ?>">
-                            <br>
-                            <label for="nim">Tempat Lahir : </label>
-                            <br>
-                            <input type="text" name="tempat_lahir" value="<?= $data['tempat_lahir']; ?>">
                             <br>
                             <label for="nim">Tanggal Lahir : </label>
                             <br>

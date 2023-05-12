@@ -1,4 +1,4 @@
-<?php include './component/head.php'; ?>
+<?php include './component/head.php';?>
 
 <body id="page-top">
 
@@ -87,7 +87,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6 mb-4">
-                            <a href="buku.php" class="card bg-success text-white shadow">
+                            <a href="buku.php" class="card bg-primary text-white shadow">
                                 <div class="card-body">
                                     Data Buku
                                     <div class="text-white-50 small"></div>
@@ -95,7 +95,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6 mb-4">
-                            <a href="peminjaman.php" class="card bg-warning text-white shadow">
+                            <a href="peminjaman.php" class="card bg-primary text-white shadow">
                                 <div class="card-body">
                                     Data Peminjaman
                                     <div class="text-white-50 small"></div>
@@ -103,7 +103,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6 mb-4">
-                            <a href="admin.php" class="card bg-warning text-white shadow">
+                            <a href="admin.php" class="card bg-primary text-white shadow">
                                 <div class="card-body">
                                     Data Admin
                                     <div class="text-white-50 small"></div>

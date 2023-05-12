@@ -99,15 +99,7 @@ if (isset($_POST['tambahadmin'])) {
     </div>
     <!-- End of Main Content -->
 
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2020</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+
 
     </div>
     <!-- End of Content Wrapper -->
@@ -120,8 +112,5 @@ if (isset($_POST['tambahadmin'])) {
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Modal Tambah -->
-    <?php include './createdata/createdataadmin.php'; ?>
-    <!-- end Modal Tambah -->
 
     <?php include './component/footer.php'; ?>
