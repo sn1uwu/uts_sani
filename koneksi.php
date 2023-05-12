@@ -73,3 +73,18 @@ function createPeminjaman($data)
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
+function updatePeminjaman($data)
+{
+    global $koneksi;
+    $id_transaksi = htmlspecialchars($data["id_transaksi"]);
+    $id_buku = htmlspecialchars($data["id_buku"]);
+    $nim_transaksi = htmlspecialchars($data["nim_transaksi"]);
+    $id_anggota = htmlspecialchars($data["id_anggota"]);
+    $tgl_pinjem = htmlspecialchars($data["tgl_pinjem"]);
+    $tgl_kembali = htmlspecialchars($data["tgl_kembali"]);
+    $status = htmlspecialchars($data["status"]);
+
+    $query = "UPDATE peminjaman SET id_buku = '$id_buku', nim_transaksi = '$nim_transaksi', id_anggota = '$id_anggota', tgl_pinjem = '$tgl_pinjem', tgl_kembali = '$tgl_kembali', status = '$status' WHERE id_transaksi = '$id_transaksi'";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
