@@ -1,6 +1,23 @@
 <?php
 include 'koneksi.php';
 
+if (isset($_POST["tambahbuku"])) {
+    if (createBuku($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data berhasil ditambahkan!');
+                document.location.href = 'buku.php';
+            </script>
+        ";
+    } else {
+        echo "
+        <script>
+            alert('Data Gagal ditambahkan!');
+            document.location.href = 'buku.php';
+        </script>";
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -196,12 +213,6 @@ include 'koneksi.php';
                         Tambah Kelas
                     </button>
 
-
-
-
-
-
-
                     </tbody>
                     </table>
                 </div>
@@ -268,7 +279,7 @@ include 'koneksi.php';
                         <input type="text" name="jumlah_buku" placeholder="Jumlah Buku" class="form-control" required>
                         <br>
                         Lokasi
-                        <select class="form-control mb-3" type="text" name="jurusan" required>
+                        <select class="form-control mb-3" type="text" name="lokasi" required>
                             <option value="Rak 1" selected>Rak 1</option>
                             <option value="Rak 2">Rak 2</option>
                             <option value="Rak 3">Rak 3</option>
