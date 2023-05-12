@@ -9,6 +9,15 @@ $koneksi = mysqli_connect($server, $user, $password, $database) or die(mysqli_er
 
 
 // ADMIN
+
+function readAdmin($data)
+{
+    global $koneksi;
+    $query = $data;
+    $result = mysqli_query($koneksi, $query);
+    return $result;
+}
+
 function registerAdmin($data)
 {
     global $koneksi;
@@ -147,6 +156,15 @@ function readAnggota($data)
 }
 
 // PEMINJAMAN .
+
+function readPeminjaman($data)
+{
+    global $koneksi;
+    $query = $data;
+    $result = mysqli_query($koneksi, $query);
+    return $result;
+}
+
 function createPeminjaman($data)
 {
     global $koneksi;
