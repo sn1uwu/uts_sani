@@ -13,6 +13,7 @@
     $datas = readBuku($query) ?>
     <?php foreach ($datas as $data) : ?>
         <tr>
+            <!-- testing -->
             <td><?= $i++; ?></td>
             <td><?= $data['nim']; ?></td>
             <td><?= $data['judul_buku']; ?></td>
@@ -59,7 +60,7 @@
                             <br>
                             <label for="nim">Tanggal Kembali : </label>
                             <br>
-                            <input type="text" name="tgl_kembali" value="<?= $data['tgl_kembali']; ?>">
+                            <input type="text" name="tgl_kembali" value="<?= $data['tgl_kembali ']; ?>">
                             <br>
                             <label for="status">Status</label>
                             <br>
