@@ -58,7 +58,7 @@ function createAnggota($data)
     return mysqli_affected_rows($koneksi);
 }
 
-// PEMINJAMAN
+// PEMINJAMAN .
 function createPeminjaman($data)
 {
     global $koneksi;
