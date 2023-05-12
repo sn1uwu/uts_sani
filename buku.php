@@ -1,5 +1,5 @@
 <?php
-require 'koneksi.php';
+include 'koneksi.php';
 
 ?>
 <!DOCTYPE html>
@@ -17,9 +17,7 @@ require 'koneksi.php';
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -70,41 +68,41 @@ require 'koneksi.php';
                     <i class="fas fa-fw fa-table"></i>
                     <span>User</span></a>
             </li>
-             <!-- Nav Item - Tables -->
+            <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="buku.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Buku</span></a>
             </li>
-             <!-- Nav Item - Tables -->
+            <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="peminjaman.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Peminjaman</span></a>
             </li>
-             <!-- Nav Item - Tables -->
+            <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="admin.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Admin</span></a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
 
         </ul>
         <!-- End of Sidebar -->
+
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -120,18 +118,14 @@ require 'koneksi.php';
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -145,15 +139,12 @@ require 'koneksi.php';
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span></span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="logout.php">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -165,93 +156,125 @@ require 'koneksi.php';
 
                 </nav>
                 <!-- End of Topbar -->
+                <!-- table -->
+                <table class="table table-striped">
+                    <tr>
+                        <th>No :</th>
+                        <th>Judul Buku :</th>
+                        <th>Pengarang</th>
+                        <th>Penerbit</th>
+                        <th>Tahun Terbit</th>
+                        <th>ISBN</th>
+                        <th>Jumlah Buku</th>
+                        <th>Lokasi</th>
+                        <th>Tanggal Input</th>
+                    </tr>
+                    <?php $query = "SELECT * FROM tb_buku";
+                    $i = 1;
+                    $datas = readBuku($query) ?>
+                    <?php foreach ($datas as $data) : ?>
+                        <tr>
+                            <td><?= $i++; ?></td>
+                            <td><?= $data['judul_buku']; ?></td>
+                            <td><?= $data['pengarang_buku']; ?></td>
+                            <td><?= $data['penerbit_buku']; ?></td>
+                            <td><?= $data['tahun_terbit']; ?></td>
+                            <td><?= $data['isbn']; ?></td>
+                            <td><?= $data['jumlah_buku']; ?></td>
+                            <td><?= $data['lokasi']; ?></td>
+                            <td><?= $data['tgl_input']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+
+
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                                       
 
 
-<!-- Modal Edit -->
-<div class="modal fade" id="edit<?=$id_kelas;?>">
-  <div class="modal-dialog">
-    <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Edit Kelas</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
+                    <!-- Modal Edit -->
+                    <div class="modal fade" id="edit<?= $id_kelas; ?>">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
 
-      <!-- Modal body -->
-      <div class="modal-body">
-        <form method="post">
-            Nama Kelas
-        <input type="text" name="nama_kelas" value="<?=$nama_kelas;?>" placeholder="Nama Kelas" class="form-control">
-        <br>
-            Kompetensi Keahlian
-        <input type="text" name="kompetensi_keahlian" value="<?=$kompetensi_keahlian;?>" placeholder="Kompetensi Keahlian" class="form-control">
-        <input type="hidden" name="id_kelas" value="<?=$id_kelas;?>">
-        <br>
-        <button type="submit" class="btn btn-warning" name="editkelas">Edit</button>
-        </form>
-      </div>
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Edit Kelas</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
 
-    </div>
-  </div>
-</div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <form method="post">
+                                        Nama Kelas
+                                        <input type="text" name="nama_kelas" value="<?= $nama_kelas; ?>" placeholder="Nama Kelas" class="form-control">
+                                        <br>
+                                        Kompetensi Keahlian
+                                        <input type="text" name="kompetensi_keahlian" value="<?= $kompetensi_keahlian; ?>" placeholder="Kompetensi Keahlian" class="form-control">
+                                        <input type="hidden" name="id_kelas" value="<?= $id_kelas; ?>">
+                                        <br>
+                                        <button type="submit" class="btn btn-warning" name="editkelas">Edit</button>
+                                    </form>
+                                </div>
 
- <!-- Modal Delete -->
-<div class="modal fade" id="delete<?=$id_kelas;?>">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Hapus Kelas</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <form method="post">
-            Apakah Anda Yakin Ingin Menghapus <?=$nama_kelas;?> ????
-        <input type="hidden" name="id_kelas" value="<?=$id_kelas;?>">
-        <br>
-        <br>
-        <button type="submit" class="btn btn-danger" name="hapuskelas">Hapus</button>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
                     </div>
 
-                </div>
-                <!-- /.container-fluid -->
+                    <!-- Modal Delete -->
+                    <div class="modal fade" id="delete<?= $id_kelas; ?>">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
 
-            </div>
-            <!-- End of Main Content -->
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Hapus Kelas</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <form method="post">
+                                        Apakah Anda Yakin Ingin Menghapus <?= $nama_kelas; ?> ????
+                                        <input type="hidden" name="id_kelas" value="<?= $id_kelas; ?>">
+                                        <br>
+                                        <br>
+                                        <button type="submit" class="btn btn-danger" name="hapuskelas">Hapus</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
+
+                    </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2020</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -262,32 +285,32 @@ require 'koneksi.php';
     </a>
 
     <!-- Modal Tambah -->
-<div class="modal fade" id="Modaltambah">
-  <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal fade" id="Modaltambah">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Tambah Kelas</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah Kelas</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-        <form method="post">
-            Nama Kelas
-        <input type="text" name="nama_kelas" placeholder="Nama Kelas" class="form-control" required>
-        <br>
-            Kompetensi Keahlian
-        <input type="text" name="kompetensi_keahlian" placeholder="Kompetensi Keahlian" class="form-control" required>
-        <br>
-        <button type="submit" class="btn btn-primary" name="tambahkelas">Submit</button>
-        </form>
-      </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form method="post">
+                        Nama Kelas
+                        <input type="text" name="nama_kelas" placeholder="Nama Kelas" class="form-control" required>
+                        <br>
+                        Kompetensi Keahlian
+                        <input type="text" name="kompetensi_keahlian" placeholder="Kompetensi Keahlian" class="form-control" required>
+                        <br>
+                        <button type="submit" class="btn btn-primary" name="tambahkelas">Submit</button>
+                    </form>
+                </div>
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
 
