@@ -58,9 +58,9 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="user.php">
+                <a class="nav-link" href="Anggota.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>User</span></a>
+                    <span>Anggota</span></a>
             </li>
              <!-- Nav Item - Tables -->
             <li class="nav-item">
