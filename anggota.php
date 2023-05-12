@@ -91,31 +91,8 @@ if (isset($_POST['tambahanggota'])) {
                 </nav>
                 <!-- End of Topbar -->
                 <!-- table -->
-                <table class="table table-striped">
-                    <tr>
-                        <th>No :</th>
-                        <th>NIM :</th>
-                        <th>Nama Anggota</th>
-                        <th>Tempat Lahir</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Gender</th>
-                        <th>Prodi</th>
-                    </tr>
-                    <?php $query = "SELECT * FROM tb_anggota";
-                    $i = 1;
-                    $datas = readAnggota($query) ?>
-                    <?php foreach ($datas as $data) : ?>
-                        <tr>
-                            <td><?= $i++; ?></td>
-                            <td><?= $data['nim']; ?></td>
-                            <td><?= $data['nama_anggota']; ?></td>
-                            <td><?= $data['tempat_lahir']; ?></td>
-                            <td><?= $data['tgl_lahir']; ?></td>
-                            <td><?= $data['jk']; ?></td>
-                            <td><?= $data['prodi']; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </table>
+                <?php include './showdata/showdataanggota.php'; ?>
+                <!-- end table -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -156,47 +133,7 @@ if (isset($_POST['tambahanggota'])) {
     </a>
 
     <!-- Modal Tambah -->
-    <div class="modal fade" id="Modaltambah">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Tambah Kelas</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <!-- Form -->
-                    <form action="" method="post">
-                        NIM
-                        <input type="text" name="nim" placeholder="NIM" class="form-control" required>
-                        <br>
-                        Nama Anggota
-                        <input type="text" name="nama_anggota" placeholder="Nama Anggota" class="form-control" required>
-                        <br>
-                        Tempat Lahir
-                        <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control" required>
-                        <br>
-                        Tanggal Lahir
-                        <input type="date" name="tgl_lahir" placeholder="Tanggal Lahir" class="form-control" required>
-                        <br>
-                        Gender
-                        <input type="text" name="jk" placeholder="Gender" class="form-control" required>
-                        <br>
-                        Prodi
-                        <input type="text" name="prodi" placeholder="prodi" class="form-control" required>
-                        <br>
-                        <!-- Kompetensi Keahlian
-                        <input type="text" name="kompetensi_keahlian" placeholder="Kompetensi Keahlian" class="form-control" required>
-                        <br> -->
-                        <button type="submit" class="btn btn-primary" name="tambahanggota">Submit</button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    <?php include './createdata/createdataanggota.php'; ?>
+    <!-- end Modal Tambah -->
 
     <?php include './component/footer.php'; ?>
