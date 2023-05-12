@@ -72,7 +72,8 @@ function updateBuku($data)
     $lokasi = htmlspecialchars($data["lokasi"]);
     $tgl_input = htmlspecialchars($data["tgl_input"]);
 
-    $query = "UPDATE tb_buku SET judul_buku = $judul_buku, pengarang_buku = $pengarang_buku, penerbit_buku = $penerbit_buku, tahun_terbit = $tahun_terbit, isbn = $isbn, jumlah_buku = $jumlah_buku, lokasi = $lokasi, tgl_input = $tgl_input WHERE id_buku = $id_buku";
+    $query = "UPDATE tb_buku SET judul_buku = '$judul_buku', pengarang_buku = '$pengarang_buku', penerbit_buku = '$penerbit_buku', tahun_terbit = '$tahun_terbit', isbn = '$isbn', jumlah_buku = '$jumlah_buku', lokasi = '$lokasi', tgl_input = '$tgl_input' WHERE id_buku = '$id_buku'";
+
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
@@ -80,7 +81,7 @@ function updateBuku($data)
 function deleteBuku($data)
 {
     global $koneksi;
-    $id_buku = htmlspecialchars($data["id_buku"]);
+    $id_buku = htmlspecialchars($data["id_hapus"]);
     $query = "DELETE FROM tb_buku WHERE id_buku = $id_buku";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
@@ -123,7 +124,7 @@ function updateAnggota($data)
     $jk = htmlspecialchars($data["jk"]);
     $prodi = htmlspecialchars($data["prodi"]);
 
-    $query = "UPDATE anggota SET nim = '$nim', nama_anggota = '$nama_anggota', tempat_lahir = '$tempat_lahir', tgl_lahir = '$tgl_lahir', jk = '$jk', prodi = '$prodi' WHERE id_anggota = '$id_anggota'";
+    $query = "UPDATE tb_anggota SET nim = '$nim', nama_anggota = '$nama_anggota', tempat_lahir = '$tempat_lahir', tgl_lahir = '$tgl_lahir', jk = '$jk', prodi = '$prodi' WHERE id_anggota = '$id_anggota'";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
@@ -131,8 +132,8 @@ function updateAnggota($data)
 function deleteAnggota($data)
 {
     global $koneksi;
-    $id_anggota = htmlspecialchars($data["id_anggota"]);
-    $query = "DELETE FROM anggota WHERE id_anggota = '$id_anggota'";
+    $id_anggota = htmlspecialchars($data["id_hapus"]);
+    $query = "DELETE FROM tb_anggota WHERE id_anggota = '$id_anggota'";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
@@ -156,7 +157,7 @@ function createPeminjaman($data)
     $tgl_kembali = htmlspecialchars($data["tgl_kembali"]);
     $status = htmlspecialchars($data["status"]);
 
-    $query = "INSERT INTO peminjaman VALUES ('','$id_buku','$nim_transaksi','$id_anggota','$tgl_pinjem','$tgl_kembali','$status')";
+    $query = "INSERT INTO tb_peminjaman VALUES ('','$id_buku','$nim_transaksi','$id_anggota','$tgl_pinjem','$tgl_kembali','$status')";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
@@ -172,7 +173,7 @@ function updatePeminjaman($data)
     $tgl_kembali = htmlspecialchars($data["tgl_kembali"]);
     $status = htmlspecialchars($data["status"]);
 
-    $query = "UPDATE peminjaman SET id_buku = '$id_buku', nim_transaksi = '$nim_transaksi', id_anggota = '$id_anggota', tgl_pinjem = '$tgl_pinjem', tgl_kembali = '$tgl_kembali', status = '$status' WHERE id_transaksi = '$id_transaksi'";
+    $query = "UPDATE tb_peminjaman SET id_buku = '$id_buku', nim_transaksi = '$nim_transaksi', id_anggota = '$id_anggota', tgl_pinjem = '$tgl_pinjem', tgl_kembali = '$tgl_kembali', status = '$status' WHERE id_transaksi = '$id_transaksi'";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
