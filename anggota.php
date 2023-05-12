@@ -79,7 +79,7 @@ if (isset($_POST['tambahanggota'])) {
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="logout.php">
+                                <a class="dropdown-item" href="index.php">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -117,19 +117,11 @@ if (isset($_POST['tambahanggota'])) {
                     <?php endforeach; ?>
                 </table>
 
-
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <button type="submit" name="submit" class="btn btn-primary" data-toggle="modal" data-target="#Modaltambah">
                         Tambah Anggota
                     </button>
-
-
-
-
-
-
                     </tbody>
                     </table>
                 </div>
@@ -207,27 +199,4 @@ if (isset($_POST['tambahanggota'])) {
         </div>
     </div>
 
-
-
-
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="endor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-
-</body>
-
-</html>
+    <?php include './component/footer.php'; ?>
