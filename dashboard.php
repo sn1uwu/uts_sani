@@ -102,20 +102,26 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                            <a href="peminjaman.php" class="card bg-warning text-white shadow">
+                        <div class="col-lg-6 mb-4">
+                            <a href="admin.php" class="card bg-warning text-white shadow">
                                 <div class="card-body">
-                                    Data Peminjaman
+                                    Data Admin
                                     <div class="text-white-50 small"></div>
+                    </div>
+                    
                 </div>
 
             </div>
 
         </div>
+        
         <!-- /.container-fluid -->
 
-        <!-- End of Main Content -->
+    </div>
+    <!-- End of Main Content -->
+
+
+
     </div>
     <!-- End of Content Wrapper -->
 
@@ -127,4 +133,23 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <?php include './component/footer.php'; ?>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
