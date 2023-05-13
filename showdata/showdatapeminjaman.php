@@ -8,7 +8,7 @@
         <th>Status</th>
         <th>Aksi</th>
     </tr>
-    <?php $query = "SELECT * FROM tb_transaksi INNER JOIN tb_buku ON tb_transaksi.id_buku = tb_buku.id_buku INNER JOIN tb_anggota ON tb_transaksi.id_anggota = tb_anggota.id_anggota WHERE status = 'pinjam'" or die(mysqli_error($conn));
+    <?php $query = "SELECT * FROM tb_transaksi INNER JOIN tb_buku ON tb_transaksi.id_buku = tb_buku.id_buku INNER JOIN tb_anggota ON tb_transaksi.id_anggota = tb_anggota.id_anggota";
     $i = 1;
     $datas = readBuku($query) ?>
     <?php foreach ($datas as $data) : ?>
@@ -45,26 +45,26 @@
                             <label for="judul_buku">NIM : </label>
                             <br>
                             Judul Buku
-                    <?php $query = "SELECT * FROM tb_buku";
+                    <?php $query = "SELECT * FROM tb_transaksi";
                     $i = 1;
-                    $datas = readBuku($query) ?>
+                    $trans = readBuku($query) ?>
                     <select name="buku" id="judul_buku" class="form-control">
-                    <?php foreach ($datas as $data) : ?>
-                        <option value="<?= $data['judul_buku']; ?>"><?= $data['judul_buku']; ?></option>
+                    <?php foreach ($trans as $tran) : ?>
+                        <option value="<?= $tran['judul_buku']; ?>"><?= $tran['judul_buku']; ?></option>
                         <?php endforeach ;?>
                         </select>            
                             <br>
                             <label for="tgl_pinjam">Tanggal Pinjam</label>
                             <br>
-                            <input type="date" name="tgl_pinjam" value="<?= $data['tgl_pinjam']; ?>">
+                            <input type="date" name="tgl_pinjam" value="<?= $tran['tgl_pinjam']; ?>">
                             <br>
                             <label for="nim">Tanggal Kembali : </label>
                             <br>
-                            <input type="text" name="tgl_kembali" value="<?= $data['tgl_kembali ']; ?>">
+                            <input type="date" name="tgl_kembali" value="<?= $tran['tgl_kembali']; ?>">
                             <br>
                             <label for="status">Status</label>
                             <br>
-                            <input type="text" name="status" value="<?= $data['status']; ?>">
+                            <input type="text" name="status" value="<?= $tran['status']; ?>">
                             <br>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" name="ubahdatabuku">Setuju</button>
