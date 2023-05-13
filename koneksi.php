@@ -190,8 +190,8 @@ function updatePeminjaman($data)
 function deletePeminjaman($data)
 {
     global $koneksi;
-    $id_transaksi = htmlspecialchars($data["id_transaksi"]);
-    $query = "DELETE FROM peminjaman WHERE id_transaksi = '$id_transaksi'";
+    $id_transaksi = htmlspecialchars($data["id_hapus"]);
+    $query = "DELETE FROM tb_transaksi WHERE id_transaksi = '$id_transaksi'";
 
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);

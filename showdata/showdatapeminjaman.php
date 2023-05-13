@@ -91,13 +91,13 @@
                     </div>
                     <div class="modal-body">
                         <p>Yakin Hapus Data?</p>
-                        <form action="hapus/hapusbuku.php" method="post">
-                            <input type="text" name="id_hapus" id="id_hapus" value="<?= $data['id_buku']; ?>" hidden>
+                        <form action="hapus/hapuspeminjaman.php" method="post">
+                            <input type="text" name="id_hapus" id="id_hapus" value="<?= $data['id_transaksi']; ?>" hidden>
 
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" name="hapusdata">Setuju</button>
+                        <button type="submit" class="btn btn-success" name="hapusdatapeminjaman">Setuju</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
                     </div>
                     </form>

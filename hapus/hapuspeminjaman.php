@@ -1,7 +1,7 @@
 <?php
 include '../koneksi.php';
-if (isset($_POST['hapusdata'])) {
-    if (deleteBuku($_POST) > 0) {
+if (isset($_POST['hapusdatapeminjaman'])) {
+    if (deletePeminjaman($_POST) > 0) {
         echo "
             <script>
                 alert('Data Anggota berhasil dihapus!');
