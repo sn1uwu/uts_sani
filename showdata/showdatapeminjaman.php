@@ -41,18 +41,24 @@
                     </div>
                     <div class="modal-body">
                         <form action="update/updatepeminjaman.php" method="post">
-                            <input type="text" name="nim" id="nim" value="<?= $data['id_anggota']; ?>" hidden>
                             <label for="judul_buku">NIM : </label>
                             <br>
+                            <input type="text" name="nim_transaksi" id="nim_transaksi" value="<?= $data['nim']; ?>">
+                            <br>
                             Judul Buku
-                    <?php $query = "SELECT * FROM tb_transaksi";
-                    $i = 1;
-                    $trans = readBuku($query) ?>
-                    <select name="buku" id="judul_buku" class="form-control">
-                    <?php foreach ($trans as $tran) : ?>
-                        <option value="<?= $tran['judul_buku']; ?>"><?= $tran['judul_buku']; ?></option>
-                        <?php endforeach ;?>
-                        </select>            
+
+                            <?php $query = "SELECT * FROM tb_buku";
+                            $i = 1;
+                            $trans = readBuku($query) ?>
+                            <input type="text" name="id_anggota" id="id_anggota" value="<?= $data['id_anggota']; ?>" hidden>
+                            <input type="text" name="id_transaksi" value="<?= $data['id_transaksi']; ?>" hidden>
+
+                            <select name="id_buku" id="id_buku" class="form-control">
+                                <?php foreach ($trans as $tran) : ?>
+                                    <option value="<?= $tran['id_buku']; ?>"><?= $tran['judul_buku']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+
                             <br>
                             <label for="tgl_pinjam">Tanggal Pinjam</label>
                             <br>
@@ -60,14 +66,16 @@
                             <br>
                             <label for="nim">Tanggal Kembali : </label>
                             <br>
-                            <input type="date" name="tgl_kembali" value="<?= $tran['tgl_kembali']; ?>">
+
+                            <input type="date" name="tgl_kembali" value="<?= $data['tgl_kembali']; ?>">
+
                             <br>
                             <label for="status">Status</label>
                             <br>
                             <input type="text" name="status" value="<?= $tran['status']; ?>">
                             <br>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="ubahdatabuku">Setuju</button>
+                                <button type="submit" class="btn btn-success" name="ubahdatapeminjaman">Setuju</button>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
                             </div>
                         </form>
@@ -87,13 +95,13 @@
                     </div>
                     <div class="modal-body">
                         <p>Yakin Hapus Data?</p>
-                        <form action="hapus/hapusbuku.php" method="post">
-                            <input type="text" name="id_hapus" id="id_hapus" value="<?= $data['id_buku']; ?>" hidden>
+                        <form action="hapus/hapuspeminjaman.php" method="post">
+                            <input type="text" name="id_hapus" id="id_hapus" value="<?= $data['id_transaksi']; ?>" hidden>
 
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" name="hapusdata">Setuju</button>
+                        <button type="submit" class="btn btn-success" name="hapusdatapeminjaman">Setuju</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
                     </div>
                     </form>
