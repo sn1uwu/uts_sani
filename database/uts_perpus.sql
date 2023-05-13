@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2023 at 01:47 PM
+-- Generation Time: May 13, 2023 at 02:09 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -33,6 +33,17 @@ CREATE TABLE `admin` (
   `password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin'),
+(2, 'tea', 'teas'),
+(3, 'sani', 'sani'),
+(4, 'shiro', 'shiro'),
+(5, 'rem', 'rem');
+
 -- --------------------------------------------------------
 
 --
@@ -43,7 +54,6 @@ CREATE TABLE `tb_anggota` (
   `id_anggota` int(11) NOT NULL,
   `nim` int(11) NOT NULL,
   `nama_anggota` varchar(50) NOT NULL,
-  `tempat_lahir` varchar(100) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `jk` enum('L','P') NOT NULL,
   `prodi` varchar(75) NOT NULL
@@ -53,9 +63,12 @@ CREATE TABLE `tb_anggota` (
 -- Dumping data for table `tb_anggota`
 --
 
-INSERT INTO `tb_anggota` (`id_anggota`, `nim`, `nama_anggota`, `tempat_lahir`, `tgl_lahir`, `jk`, `prodi`) VALUES
-(2, 323432111, 'watiq', 'bandung', '1998-01-01', 'P', 'Teknik Management'),
-(3, 3432123, 'Rudi Tabuti', 'Palembang', '1998-07-02', 'L', 'Sistem Operasi');
+INSERT INTO `tb_anggota` (`id_anggota`, `nim`, `nama_anggota`, `tgl_lahir`, `jk`, `prodi`) VALUES
+(2, 323432111, 'watiq', '1998-01-01', 'P', 'Teknik Management'),
+(3, 3432123, 'Rudi Tabuti', '1998-07-02', 'L', 'Sistem Operasi'),
+(4, 28374983, 'rusdi', '2023-05-12', 'L', 'TI-KAB'),
+(7, 23423, 'sano', '2008-06-10', 'P', 'TI-KAB'),
+(8, 345345, 'rusdi', '2023-05-24', 'L', 'TI-KAB');
 
 -- --------------------------------------------------------
 
@@ -80,8 +93,10 @@ CREATE TABLE `tb_buku` (
 --
 
 INSERT INTO `tb_buku` (`id_buku`, `judul_buku`, `pengarang_buku`, `penerbit_buku`, `tahun_terbit`, `isbn`, `jumlah_buku`, `lokasi`, `tgl_input`) VALUES
-(4, 'Belajar HTML', 'surya', 'Erlangga', '2018', '234312', 3, 'Rak 3', '2020-07-21'),
-(6, 'Belajar Codeigniter', 'ridho', 'budi store', '2019', '45234521', 11, 'Rak 2', '2020-07-27');
+(4, 'Belajar HTML', 'surya', 'Erlanggo', '2018', '234312', 3, 'Rak 1', '2020-07-21'),
+(6, 'Belajar Codeigniter', 'ridho', 'budi store', '2019', '45234521', 11, 'Rak 2', '2020-07-27'),
+(9, 'Belajar PHP', 'lakdfnnd', 'sdmfsd', '2050', '090907', 7, 'Rak 1', '2023-05-24'),
+(10, 'Belajar Santed', 'pwoejf', 'dfkdsnf', '2044', '9823749832', 888, 'Rak 1', '2023-05-10');
 
 -- --------------------------------------------------------
 
@@ -144,19 +159,19 @@ ALTER TABLE `tb_transaksi`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_anggota`
 --
 ALTER TABLE `tb_anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_buku`
 --
 ALTER TABLE `tb_buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_transaksi`

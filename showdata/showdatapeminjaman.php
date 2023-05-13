@@ -46,6 +46,7 @@
                             <input type="text" name="nim_transaksi" id="nim_transaksi" value="<?= $data['nim']; ?>">
                             <br>
                             Judul Buku
+
                             <?php $query = "SELECT * FROM tb_buku";
                             $i = 1;
                             $trans = readBuku($query) ?>
@@ -57,18 +58,21 @@
                                     <option value="<?= $tran['id_buku']; ?>"><?= $tran['judul_buku']; ?></option>
                                 <?php endforeach; ?>
                             </select>
+
                             <br>
                             <label for="tgl_pinjam">Tanggal Pinjam</label>
                             <br>
-                            <input type="date" name="tgl_pinjam" value="<?= $data['tgl_pinjam']; ?>">
+                            <input type="date" name="tgl_pinjam" value="<?= $tran['tgl_pinjam']; ?>">
                             <br>
                             <label for="nim">Tanggal Kembali : </label>
                             <br>
+
                             <input type="date" name="tgl_kembali" value="<?= $data['tgl_kembali']; ?>">
+
                             <br>
                             <label for="status">Status</label>
                             <br>
-                            <input type="text" name="status" value="<?= $data['status']; ?>">
+                            <input type="text" name="status" value="<?= $tran['status']; ?>">
                             <br>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" name="ubahdatapeminjaman">Setuju</button>
